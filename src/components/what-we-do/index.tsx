@@ -13,7 +13,7 @@ lives whilst still contributing to community.
         </p>
         <div className="flex flex-col gap-5 lg:flex-row lg:gap-16">
             <div className="w-full flex flex-col items-center gap-2">
-                <div className="w-full relative  max-w-[471px] h-[200px] lg:h-[471px]">
+                <div className="w-full relative max-w-[350px]   lg:max-w-[471px] h-[200px] lg:h-[471px]">
                     <Image src={Food} fill alt="food" />
                 </div>
                 <div className="flex flex-col w-full items-center justify-center lg:items-start gap-2">
@@ -25,7 +25,7 @@ lives whilst still contributing to community.
 
             </div>
              <div className="w-full flex flex-col items-center gap-2">
-                <div className="w-full relative  max-w-[471px] h-[200px] lg:h-[471px]">
+                <div className="w-full relative  max-w-[350px] lg:max-w-[471px] h-[200px] lg:h-[471px]">
                     <Image src={Exercise} fill alt="food" />
                 </div>
                 <div className="flex flex-col w-full items-center lg:items-start gap-2">

@@ -6,6 +6,7 @@ import WhatWeDo from "@/components/what-we-do";
 import WorkWithUs from "@/components/work-with-us";
 import TalkToNutritionist from "@/components/talk-to-nutritionist"
 import CTA from "@/components/cta"
+import Footer from "@/components/footer";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <WorkWithUs />
       <TalkToNutritionist />
       <CTA />
+      <Footer />
    </div>
   );
 };

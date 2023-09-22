@@ -1,5 +1,3 @@
-
-
 const Hero = () => {
   return (
     <section className="w-full h-[350px] lg:h-[570px] flex items-center justify-center px-3 bg-[url('/images/svg/hero.svg')] bg-no-repeat bg-cover">
