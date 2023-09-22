@@ -19,7 +19,7 @@ lives whilst still contributing to community.
                 <div className="flex flex-col w-full items-center justify-center lg:items-start gap-2">
                     <p className="font-bold text-lg">Meal Plans</p>
                     <p className="lg:max-w-[70%] text-sm lg:text-base w-full">
-                        Learn to eat like the world's longest-lived people with the Rejuvenate Meal Planner.  Savor delicious meals that are optimized for your life. Eat for wellness, vitality, and longevity. Make life simple, with easy-to-make, flavorful recipes.
+                        Learn to eat like the world&apos;s longest-lived people with the Rejuvenate Meal Planner.  Savor delicious meals that are optimized for your life. Eat for wellness, vitality, and longevity. Make life simple, with easy-to-make, flavorful recipes.
                     </p>
                 </div>
 
