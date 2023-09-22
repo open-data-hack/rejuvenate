@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const TalkToNutritionist = () => {
   return (
-  <div className="w-full px-4 lg:px-8">
+  <div className="w-full px-4 lg:px-8 text-[#3C4142]">
         <section className='w-full flex flex-col-reverse gap-7 lg:flex-row py-20 max-w-[1074px] mx-auto items-center justify-between'>
                <div className="w-full flex flex-col gap-6 lg:max-w-[493px]">
                 <p className="text-[#014421] font-bold text-[24px] lg:text-[40px]">TALK TO A NUTRITIONIST</p>

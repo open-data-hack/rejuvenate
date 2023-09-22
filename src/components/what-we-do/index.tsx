@@ -11,7 +11,7 @@ const WhatWeDo = () => {
 form green zones in their regions, where people can live up to 100 years and become centenarians and live healthy, vital and fulfilling
 lives whilst still contributing to community.
         </p>
-        <div className="flex flex-col gap-5 lg:flex-row lg:gap-16">
+        <div className="flex flex-col gap-5 lg:flex-row lg:gap-16 text-[#3C4142]">
             <div className="w-full flex flex-col items-center gap-2">
                 <div className="w-full relative max-w-[350px]   lg:max-w-[471px] h-[200px] lg:h-[471px]">
                     <Image src={Food} fill alt="food" />

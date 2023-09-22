@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const WorkWithUs = () => {
   return (
-  <div className="w-full bg-[#EEC438] px-4 lg:px-8">
+  <div className="w-full bg-[#EEC438] px-4 lg:px-8 text-[#3C4142]">
         <section className='w-full flex flex-col  gap-6 lg:flex-row py-20 max-w-[1074px] mx-auto items-center justify-between'>
             <div className="w-full h-[250px] max-w-[471px] lg:h-[474px]  relative">
                 <Image src={Workwithus} fill alt="work with us" />
