@@ -10,7 +10,7 @@ import Footer from "@/components/footer";
 
 const App = () => {
   return (
-   <div className="bg-[#F5F5DC] min-h-screen">
+   <div className="bg-primaryBeige min-h-screen">
      <div className="px-4 lg:px-8 w-full">
         <Header />
       </div>
