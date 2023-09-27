@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'material-symbols/outlined.css';
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,4 +26,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+.material-symbols-outlined.fill{
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0;
 }
