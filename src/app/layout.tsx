@@ -1,31 +1,8 @@
-import { useEffect } from "react";
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
-// import { WagmiConfig, createConfig, useAccount } from "wagmi";
 import { AppWrapper } from "../context/state";
-// import {
-//   ConnectKitProvider,
-//   ConnectKitButton,
-//   getDefaultConfig,
-// } from "connectkit";
-
-// const config = createConfig(
-//   getDefaultConfig({
-//     // Required API Keys
-//     alchemyId: process.env.ALCHEMY_ID, // or infuraId
-//     walletConnectProjectId: "",
-
-//     // Required
-//     appName: "Your App Name",
-
-//     // Optional
-//     appDescription: "Your App Description",
-//     appUrl: "https://family.co", // your app's url
-//     appIcon: "https://family.co/logo.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
-//   })
-// );
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -46,13 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-       {/* <WagmiConfig config={config}>
-      <ConnectKitProvider> */}
-        <AppWrapper>
-           <body className={poppins.className}>{children}</body>
-        </AppWrapper>
-      {/* </ConnectKitProvider>
-    </WagmiConfig> */}
+      <AppWrapper>
+          <body className={poppins.className}>{children}</body>
+      </AppWrapper>
     </html>
   )
 }
