@@ -1,4 +1,5 @@
 import { Petit_Formal_Script } from 'next/font/google';
+//@ts-ignore
 import { Web3Storage } from 'web3.storage';
 
 function getAccessToken () {
