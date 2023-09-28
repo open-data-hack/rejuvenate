@@ -18,7 +18,7 @@ export function useWallet() {
 
    const connectWallet = async () => {
     try {
-      if (!window) return
+      if(typeof window === 'undefined') return
       const res =  await dataverseConnector.connectWallet({
   wallet: WALLET.METAMASK,
 });

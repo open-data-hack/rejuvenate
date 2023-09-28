@@ -3,18 +3,18 @@
 
 import { Link } from "@chakra-ui/next-js";
 import RejuvenateAi from "../../images/svg/rejuvenate-logo.svg";
-import { useWallet,} from "@/hooks/useWallet";
+import { useWallet} from "@/hooks/useWallet";
 import { useAppContext } from "@/context/state";
 import RegisterForm from "../register-form";
 
 
 
-const Header = () => {
+const Header = ({bg='transparent'}:{bg?:string}) => {
+
    const { wallet, connectWallet} = useWallet();
    const { address } = useAppContext();
   
 
-const Header = ({bg='transparent'}:{bg?:string}) => {
 
   return (
     <section className={`bg-${bg} px-2 max-w-[1300px] w-full py-1 flex justify-between items-center mx-auto`}>

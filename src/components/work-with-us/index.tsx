@@ -15,8 +15,8 @@ const WorkWithUs = () => {
                     <br />
                     Are you a top tier professional nutritionist and looking to work with us? Get in touch with our partnership team here.
                 </p>
-               <button className="bg-[#014421] h-[48px] w-[163px] lg:h-[59px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl">
-                    Button
+                <button className="bg-primaryGreen max-w-[220px] h-[48px] px-5 hover:bg-primaryYellow hover:text-primaryBeige lg:h-[59px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl">
+                    Join us
                 </button>
             </div>
        

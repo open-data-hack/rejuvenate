@@ -2,7 +2,7 @@ import { Petit_Formal_Script } from 'next/font/google';
 import { Web3Storage } from 'web3.storage';
 
 function getAccessToken () {
-  return process.env.WEB3STORAGE_API_TOKEN
+  return process.env.NEXT_PUBLIC_WEB3STORAGE_API_TOKEN
 }
 
 function makeStorageClient () {
