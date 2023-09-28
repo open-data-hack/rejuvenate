@@ -1,9 +1,56 @@
 'use client'
 
 import Icon from "@/components/Icon"
-import { Avatar, Box, Button, Flex, Heading, Text } from "@chakra-ui/react"
+import { Avatar, Box, Button, Flex, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tag, TagLabel, Text, useDisclosure } from "@chakra-ui/react"
+import { format } from "date-fns";
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+type Nutritionist={
+    firstName:string;location:string;lastName:string;bio:string;id:number;avatar:string
+}
+const data:Nutritionist[]=[{id:1,
+    firstName:'Michelle',lastName:'Sanchez',bio:`Michelle is a passionate nutritionist dedicated to helping individuals achieve their health and wellness goals through proper nutrition. With a Bachelor's degree in Nutrition and years of experience in the field, she possesses a deep understanding of the vital role that food plays in our lives.
+    `,avatar:'/images/f-user-47.jpg',location:'Mexico'
+},{id:2,
+    firstName:'Chris',lastName:'Eze',bio:` Chris is a seasoned nutritionist with a strong commitment to improving lives through the power of nutrition. Armed with a Master's degree in Nutritional Science and a wealth of expertise, he brings a holistic perspective to the table.`,avatar:'/images/m-user-30.jpg',location:'Nigeria'
+},{id:3,
+    firstName:'Rachel',lastName:'Brooke',bio:`Rachel is a dedicated nutritionist on a mission to inspire healthier living through balanced eating. Armed with a Bachelor's degree in Nutrition and years of practical experience, she possesses a deep-rooted passion for helping individuals unlock their full wellness potential. `,avatar:'/images/f-user-53.jpg',location:'United States'
+},{id:4,
+    firstName:'Anna',lastName:'Will',bio:` Anna is a highly skilled nutritionist with a strong commitment to promoting wellness through informed dietary choices. Holding a Master's degree in Nutritional Science and a wealth of experience, she brings a comprehensive understanding of the intricate relationship between nutrition and health. 
+    `,avatar:'/images/f-user-26.jpg',location:'United States'
+}]
 
+const sectionTimes=[30,45,60,90,120];
 export default function NutritionistPage(){
+  const { isOpen, onOpen, onClose } = useDisclosure()
+const [selectedNutritionist,setSelectedNutritionist]=useState<Nutritionist|null>(null)
+const [bookingDate,setBookingDate]=useState(new Date())
+const [isSubmitting,setIsSubmitting]=useState(false)
+const [showDate,setShowDate]=useState(false)
+const [sectionDuration,setSectionDuration]=useState(30);
+
+const minsToMillisec=(mins:number)=>+mins * 1000*60;
+
+
+  const handleClick=(nutritionist:Nutritionist)=>{
+onOpen();
+setSelectedNutritionist(nutritionist)
+  }
+  const handleDateSelect=(date:Date)=>{
+    setBookingDate(date);
+    setShowDate(true)
+  }
+  const handleDateChange=(date:Date)=>{
+    setBookingDate(date)
+  }
+
+  function handleBookingSubmit(){
+setIsSubmitting(true)
+
+setTimeout(()=>{
+    setIsSubmitting(false)
+},3000)
+  }
     return (
 <Box className="bg-primaryYellowTrans" h={'100vh'} px={6} overflowY={'auto'} pb={8}>
     <Box  maxW={'1300'} mx={'auto'}>
@@ -11,79 +58,84 @@ export default function NutritionistPage(){
 <Heading size={'lg'} my={4} bg={'white'} py={4} px={3} rounded={'md'}>Find Nutritionist from around the world</Heading>
 <Flex gap={6} wrap={'wrap'}>
 
+{data.map((p,i)=>{
 
-<Box bg={'white'} rounded={'md'} px={4} py={5} flex={1} minW={500} >
+   return <Box key={'nutri'+i} bg={'white'} rounded={'md'} px={4} py={5} flex={1} minW={500} >
     <Flex align={'start'} gap={4} mb={5}>
 
-<Avatar size={'lg'} src="/images/f-user-47.jpg"/> 
+<Avatar size={'lg'} src={p.avatar}/> 
 <Box>
-<Heading className="text-primaryGreen" as={'h3'} mb={2} size={'md'}>Michelle Sanchez</Heading>
-<Text as={Flex} gap={1} className="text-secondaryGray"><Icon name="location_on" size={20}/> Mexico</Text>
+<Heading className="text-primaryGreen" as={'h3'} mb={2} size={'md'}>{p.firstName} {p.lastName}</Heading>
+<Text as={Flex} gap={1} className="text-secondaryGray"><Icon name="location_on" size={20}/> {p.location}</Text>
 </Box>
-<Button ml={'auto'} className="bg-primaryYellow text-primaryGreen" gap={2} rounded={'full'} size={'md'}><Icon size={24} name="book"/> Book an Appointment</Button>
+<Button onClick={()=>handleClick(p)} ml={'auto'} className="bg-primaryYellow text-primaryGreen" gap={2} rounded={'full'} size={'md'}><Icon size={24} name="book"/> Book an Appointment</Button>
     </Flex>
     <Box>
-        <Heading mb={3} as={'h4'} size={'md'} className="text-primaryGreen" >About Michelle</Heading>
+        <Heading mb={3} as={'h4'} size={'md'} className="text-primaryGreen" >About {p.firstName}</Heading>
         <Text pb={4} className="text-primaryGray">
-        Michelle is a passionate nutritionist dedicated to helping individuals achieve their health and wellness goals through proper nutrition. With a Bachelor's degree in Nutrition and years of experience in the field, she possesses a deep understanding of the vital role that food plays in our lives.
-        </Text>
+       {p.bio}  </Text>
     </Box>
 
 </Box>
-<Box bg={'white'} rounded={'md'} px={4} py={5} flex={1} minW={500}>
-    <Flex align={'start'} gap={4} mb={5}>
-
-<Avatar size={'lg'} src="/images/m-user-30.jpg"/> 
-<Box>
-<Heading className="text-primaryGreen" as={'h3'} mb={2} size={'md'}>Chris Eze</Heading>
-<Text as={Flex} gap={1} className="text-secondaryGray"><Icon name="location_on" size={20}/> Nigeria</Text>
-</Box>
-<Button ml={'auto'} className="bg-primaryYellow text-primaryGreen" gap={2} rounded={'full'} size={'md'}><Icon size={24} name="book"/> Book an Appointment</Button>
-    </Flex>
-    <Box>
-        <Heading mb={3} as={'h4'} size={'md'} className="text-primaryGreen" >About Chris</Heading>
-        <Text pb={4} className="text-primaryGray">
-        Chris is a seasoned nutritionist with a strong commitment to improving lives through the power of nutrition. Armed with a Master's degree in Nutritional Science and a wealth of expertise, he brings a holistic perspective to the table.  </Text>
-    </Box>
-
-</Box>
-<Box bg={'white'} rounded={'md'} px={4} py={5} flex={1} minW={500}>
-    <Flex align={'start'} gap={4} mb={5}>
-
-<Avatar size={'lg'} src="/images/f-user-53.jpg"/> 
-<Box>
-<Heading className="text-primaryGreen" as={'h3'} mb={2} size={'md'}>Rachel Brooke</Heading>
-<Text as={Flex} gap={1} className="text-secondaryGray"><Icon name="location_on" size={20}/> United States</Text>
-</Box>
-<Button ml={'auto'} className="bg-primaryYellow text-primaryGreen" gap={2} rounded={'full'} size={'md'}><Icon size={24} name="book"/> Book an Appointment</Button>
-    </Flex>
-    <Box>
-        <Heading mb={3} as={'h4'} size={'md'} className="text-primaryGreen" >About Rachel</Heading>
-        <Text pb={4} className="text-primaryGray">
-        Rachel is a dedicated nutritionist on a mission to inspire healthier living through balanced eating. Armed with a Bachelor's degree in Nutrition and years of practical experience, she possesses a deep-rooted passion for helping individuals unlock their full wellness potential.  </Text>
-    </Box>
-
-</Box>
-<Box bg={'white'} rounded={'md'} px={4} py={5} flex={1} minW={500}>
-    <Flex align={'start'} gap={4} mb={5}>
-
-<Avatar size={'lg'} src="/images/f-user-26.jpg"/> 
-<Box>
-<Heading className="text-primaryGreen" as={'h3'} mb={2} size={'md'}>Anna Will</Heading>
-<Text as={Flex} gap={1} className="text-secondaryGray"><Icon name="location_on" size={20}/> United States</Text>
-</Box>
-<Button ml={'auto'} className="bg-primaryYellow text-primaryGreen" gap={2} rounded={'full'} size={'md'}><Icon size={24} name="book"/> Book an Appointment</Button>
-    </Flex>
-    <Box>
-        <Heading mb={3} as={'h4'} size={'md'} className="text-primaryGreen" >About Anna</Heading>
-        <Text pb={4} className="text-primaryGray">
-        Anna is a highly skilled nutritionist with a strong commitment to promoting wellness through informed dietary choices. Holding a Master's degree in Nutritional Science and a wealth of experience, she brings a comprehensive understanding of the intricate relationship between nutrition and health. 
-        </Text>
-    </Box>
-
-</Box>
+})}
 </Flex>
     </Box>
+   
+
+      <Modal size={'3xl'} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Booking appointment</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text className="text-secondaryGray" mb={5}>
+
+            You're booking {selectedNutritionist?.firstName} {selectedNutritionist?.lastName}
+            </Text>
+            <Text fontWeight={'semibold'} mb={2}> Appointment Details:</Text>
+            <Text> <span className="text-secondaryGray"> Date: </span> 
+             {format(bookingDate,'E, d MMM yyyy hh:mm aaa')}
+                 </Text>
+            <Text > <span className="text-secondaryGray">Duration:
+                </span> {sectionDuration} MINS </Text>
+            <Flex wrap={'wrap'} gap={6}>
+<Box>
+
+            <Heading size={'md'} className="text-primaryGreen" my={4}>Choose appointment date</Heading>
+
+            <DatePicker  minDate={new Date()}
+            showTimeSelect
+            inline selectsStart
+            selected={bookingDate}
+            onSelect={handleDateSelect} //when day is clicked
+            onChange={handleDateChange} //only when value has changed
+/>
+            </Box>
+            <Box>
+                
+            <Heading size={'md'} className="text-primaryGreen" my={4}>Section Duration</Heading>
+
+<Flex gap={4} wrap={'wrap'} maxW={350}>
+    {sectionTimes.map((dur,i)=>{
+
+   return <Button onClick={()=>setSectionDuration(dur)} key={'dur'+i} className={`text-primaryGreen rounded-full px-4 py-2 border ${sectionDuration===dur?'bg-primaryYellow':''}`}>
+{dur} MINS
+   </Button>
+    })}
+</Flex>
+            </Box>
+            </Flex>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button variant={'outline'} mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button onClick={handleBookingSubmit} variant='solid' isDisabled={isSubmitting} isLoading={isSubmitting} className="disabled:opacity-60 bg-primaryYellow text-primaryGreen">Complete Booking</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    
 </Box>
     )
 }

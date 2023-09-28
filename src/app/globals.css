@@ -3,7 +3,7 @@
 @tailwind utilities;
 @import 'material-symbols/outlined.css';
 
-
+@import "react-datepicker/dist/react-datepicker.css";
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
