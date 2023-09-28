@@ -1,6 +1,7 @@
 'use client'
 
 import Icon from "@/components/Icon"
+import CustomHuddle from "@/components/custom-huddle"
 import DashboardSideBar from "@/components/dashboard-sidebar"
 import {Td, Box, Button, Flex, Heading, Table, TableContainer, Tbody, Text, Th, Thead, Tr, Avatar } from "@chakra-ui/react"
 import { format } from 'date-fns'
@@ -42,8 +43,8 @@ export default function DashBoard(){
         <Td >45 MINS</Td>
         <Td>
             <Flex gap={4}>
-
-            <Button size={'sm'} rounded={'full'} gap={2} className="hover:bg-primaryYellowTrans hover:text-primaryGreen text-primaryBeige bg-primaryGreen"><Icon size={20} name="phone"/> Start Call</Button>
+<CustomHuddle/>
+            {/* <Button size={'sm'} rounded={'full'} gap={2} className="hover:bg-primaryYellowTrans hover:text-primaryGreen text-primaryBeige bg-primaryGreen"><Icon size={20} name="phone"/> Start Call</Button> */}
             <Button size={'sm'} variant={'outline'} rounded={'full'} className="text-primaryGreen">View Details</Button>
             </Flex>
             </Td>

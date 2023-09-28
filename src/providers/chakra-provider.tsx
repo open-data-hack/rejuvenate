@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { CacheProvider} from '@chakra-ui/next-js'
 import { ChakraProvider as Provider} from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
-
+import { useHuddle01 } from '@huddle01/react';
 const colors = {
     brand: {
       900: '#1a365d',
@@ -15,7 +15,9 @@ const colors = {
   export const theme = extendTheme({ colors })
 export default function ChakraProviders({children}:{children:ReactNode}) {
 
-
+  // const { initialize } = useHuddle01();
+ 
+  // initialize("nJVgJl-fL9NWACJ-bEKbcR6U6DEt6Fsr")
     return (
         <CacheProvider >
 
