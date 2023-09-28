@@ -99,7 +99,7 @@ setTimeout(()=>{
           <ModalBody>
             <Text className="text-secondaryGray" mb={5}>
 
-            You're booking <span className="text-primaryGreen">
+            You&apos;re booking <span className="text-primaryGreen">
               {selectedNutritionist?.firstName} {selectedNutritionist?.lastName}
               </span> 
             </Text>
