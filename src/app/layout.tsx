@@ -1,10 +1,9 @@
-import { useEffect } from "react";
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
-// import { WagmiConfig, createConfig, useAccount } from "wagmi";
 import { AppWrapper } from "../context/state";
+
 import ChakraProviders from "@/providers/chakra-provider";
 // import {
 //   ConnectKitProvider,
@@ -48,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
 
+
        {/* <WagmiConfig config={config}>
       <ConnectKitProvider> */}
         <AppWrapper>
@@ -57,7 +57,7 @@ export default function RootLayout({
           </ChakraProviders>
         </AppWrapper>
       {/* </ConnectKitProvider>
-    </WagmiConfig> */}
+    </WagmiConfig> */
     </html>
   )
 }

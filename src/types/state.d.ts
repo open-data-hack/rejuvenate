@@ -10,11 +10,11 @@ export interface IAddressData {
 }
 
 export type stateContextType = {
-  addresses: IAddressData[] | undefined;
+  address: string;
   allTokensData: any;
   loading: boolean;
   setAllTokenData: (data: any) => void;
-  setAddresses: (data: IAddressData[]) => void;
+  setAddress: (data: string) => void;
   setLoading: (data: boolean) => void;
 };
 
