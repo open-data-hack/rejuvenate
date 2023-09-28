@@ -1,12 +1,15 @@
+import { Link } from "@chakra-ui/next-js";
 import RejuvenateAi from "../../images/svg/rejuvenate-logo.svg";
 
-const Header = () => {
+const Header = ({bg='transparent'}:{bg?:string}) => {
   return (
-    <section className='max-w-[1300px] w-full py-1 flex justify-between items-center mx-auto'>
+    <section className={`bg-${bg} px-2 max-w-[1300px] w-full py-1 flex justify-between items-center mx-auto`}>
         <div>
+          <Link href={'/'} textDecor={'none'}>
             <RejuvenateAi />
+          </Link>
         </div>
-        <button className="bg-[#014421] h-[48px] w-[110px] lg:w-[163px] lg:h-[50px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl">
+        <button className="bg-primaryGreen h-[48px] w-[110px] lg:w-[163px] lg:h-[50px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl">
             Register
         </button>
     </section>
