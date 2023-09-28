@@ -18,7 +18,9 @@ const config: Config = {
       'primaryGreen': '#014421',
       'primaryBeige': "#F5F5DC",
       'primaryYellow': "#EEC438",
-      'primaryGray': "#3C4142"
+      'primaryYellowTrans': "rgba(238, 196, 56, 0.2)",
+      'primaryGray': "#3C4142",
+      'secondaryGray': "#A8ABAC",
     },
     },
   },

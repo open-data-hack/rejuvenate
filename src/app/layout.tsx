@@ -5,6 +5,7 @@ import { Poppins } from 'next/font/google'
 
 // import { WagmiConfig, createConfig, useAccount } from "wagmi";
 import { AppWrapper } from "../context/state";
+import ChakraProviders from "@/providers/chakra-provider";
 // import {
 //   ConnectKitProvider,
 //   ConnectKitButton,
@@ -46,10 +47,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+
        {/* <WagmiConfig config={config}>
       <ConnectKitProvider> */}
         <AppWrapper>
+          <ChakraProviders>
+
            <body className={poppins.className}>{children}</body>
+          </ChakraProviders>
         </AppWrapper>
       {/* </ConnectKitProvider>
     </WagmiConfig> */}
