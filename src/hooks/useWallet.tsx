@@ -10,7 +10,7 @@ import {
   WALLET
 } from "@dataverse/dataverse-connector";
 
-const dataverseConnector: DataverseConnector = new DataverseConnector();
+const dataverseConnector: DataverseConnector = window && new DataverseConnector();
 export function useWallet() {
   const { runtimeConnector } = useContext(DataverseContext);
   const { setAddress } = useAppContext();
