@@ -1,7 +1,7 @@
 'use client'
 
 import Icon from "@/components/Icon"
-import Header from "@/components/header";
+import Header from "@/components/nutritionist-header";
 import {useToast, Avatar, Box, Button, Flex, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tag, TagLabel, Text, useDisclosure } from "@chakra-ui/react"
 import { format } from "date-fns";
 import { useState } from "react";

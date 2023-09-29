@@ -31,7 +31,8 @@ const Header = ({bg='transparent'}:{bg?:string}) => {
             <RejuvenateAi />
           </Link>
         </div>
-       {
+    <>
+        {
         address ? (
              <>
           <label  className="btn bg-[#014421] h-[48px] px-5 lg:h-[50px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl" htmlFor="modal-1"> Register</label>
@@ -40,7 +41,7 @@ const Header = ({bg='transparent'}:{bg?:string}) => {
         ) : (
            <ConnectKitButton />
         )
-       }
+       }</>
     <RegisterForm />
     </section>
   );
