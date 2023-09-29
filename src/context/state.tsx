@@ -32,7 +32,9 @@ export function AppWrapper({ children }: StateContextProviderProps) {
   };
 
   return (
-    <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>
+    <AppContext.Provider value={sharedState}>
+      {children}
+    </AppContext.Provider>
   );
 }
 

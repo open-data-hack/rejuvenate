@@ -3,16 +3,30 @@
 
 import { Link } from "@chakra-ui/next-js";
 import RejuvenateAi from "../../images/svg/rejuvenate-logo.svg";
-import { useWallet} from "@/hooks/useWallet";
+//import { useWallet} from "@/hooks/useWallet";
 import { useAppContext } from "@/context/state";
 import RegisterForm from "../register-form";
+import { useAccount, useNetwork } from "wagmi";
+//import Link from "next/link";
+import {
+  useConnectModal,
+  useAccountModal,
+  useChainModal,
+} from "@rainbow-me/rainbowkit";
 
 
 
 const Header = ({bg='transparent'}:{bg?:string}) => {
 
-   const { wallet, connectWallet} = useWallet();
-   const { address } = useAppContext();
+  //  const { address, isConnected} = useAccount();
+  //  //const { address } = useAppContext();
+
+   const { openConnectModal } = useConnectModal();
+   const { openAccountModal } = useAccountModal();
+   const { openChainModal } = useChainModal();
+   const { isConnected, address } = useAccount();
+   const { chain } = useNetwork();
+ 
   
 
 
@@ -24,8 +38,8 @@ const Header = ({bg='transparent'}:{bg?:string}) => {
           </Link>
         </div>
        {
-        address ? (
-           <button onClick={connectWallet} className="bg-[#014421] h-[48px] px-5 lg:h-[50px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl">
+        openConnectModal && address ? (
+           <button onClick={openConnectModal} className="bg-[#014421] h-[48px] px-5 lg:h-[50px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl">
             Connect Wallet
 
         </button>
@@ -37,6 +51,7 @@ const Header = ({bg='transparent'}:{bg?:string}) => {
         )
        }
     <RegisterForm />
+    
     </section>
   );
 };

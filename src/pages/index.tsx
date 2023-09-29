@@ -1,20 +1,22 @@
-"use client";
-import { useEffect } from "react";
+"use client"
+
+import Hero from "@/components/hero";
 import Header from "@/components/header";
-import Hero from "@/components/hero"
 import WhatWeDo from "@/components/what-we-do";
 import WorkWithUs from "@/components/work-with-us";
-import TalkToNutritionist from "@/components/talk-to-nutritionist"
-import CTA from "@/components/cta"
+import TalkToNutritionist from "@/components/talk-to-nutritionist";
 import Footer from "@/components/footer";
-import { DataverseProvider } from "@/context/dataverse";
+import CTA from "@/components/cta";
+import type { NextPage } from "next";
+//import { ConnectButton } from "@rainbow-me/rainbowkit";
+import RootLayout from "./layout";
 
-const App = () => {
+const Home: NextPage = () => {
   return (
-    <DataverseProvider>
-        <div className="bg-primaryBeige min-h-screen">
+    <>
+    <Header />     
+    <div className="bg-primaryBeige min-h-screen">
      <div className="px-4 lg:px-8 w-full">
-        <Header />
       </div>
       <div className=" h-7 bg-[#EEC438]" />
       <Hero />
@@ -27,8 +29,8 @@ const App = () => {
       <Footer />
    </div>
 
-    </DataverseProvider>
+    </>
   );
-};
+}
 
-export default App;
+export default Home;
