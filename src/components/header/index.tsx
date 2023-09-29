@@ -4,19 +4,16 @@ import { useEffect } from "react";
 import { Link } from "@chakra-ui/next-js";
 import { useAccount } from "wagmi";
 import RejuvenateAi from "../../images/svg/rejuvenate-logo.svg";
-import { useWallet} from "@/hooks/useWallet";
 import { useAppContext } from "@/context/state";
 import RegisterForm from "../register-form";
 import {
-  ConnectKitProvider,
   ConnectKitButton,
-  getDefaultConfig,
 } from "connectkit";
 
 const Header = ({bg='transparent'}:{bg?:string}) => {
 
    const { setAddress } = useAppContext();
-   const { address, isConnecting, isDisconnected } = useAccount();
+   const { address } = useAccount();
 
     useEffect(() => {
       setAddress(`${address}`);

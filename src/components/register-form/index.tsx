@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from 'next/navigation';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -7,6 +8,7 @@ import { uploadPromptToIpfs } from "@/helpers/prompt";
 
 
 const RegisterForm = () => {
+    const router = useRouter();
 
      // form validation rules
   const validationSchema = Yup.object().shape({
@@ -32,8 +34,8 @@ const RegisterForm = () => {
   const { errors } = formState;
 
   const onSubmit = async (data:any) => {
-   console.log(data);
-   await uploadPromptToIpfs(data);
+//    const cid = await uploadPromptToIpfs(data);
+   router.push('/member/dashboard');
   };
   
   return (
