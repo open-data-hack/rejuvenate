@@ -1,18 +1,26 @@
 
 "use client";
-
+import { useEffect } from "react";
 import { Link } from "@chakra-ui/next-js";
+import { useAccount } from "wagmi";
 import RejuvenateAi from "../../images/svg/rejuvenate-logo.svg";
 import { useWallet} from "@/hooks/useWallet";
 import { useAppContext } from "@/context/state";
 import RegisterForm from "../register-form";
-
-
+import {
+  ConnectKitProvider,
+  ConnectKitButton,
+  getDefaultConfig,
+} from "connectkit";
 
 const Header = ({bg='transparent'}:{bg?:string}) => {
 
-   const { wallet, connectWallet} = useWallet();
-   const { address } = useAppContext();
+   const { setAddress } = useAppContext();
+   const { address, isConnecting, isDisconnected } = useAccount();
+
+    useEffect(() => {
+      setAddress(`${address}`);
+    }, [address, setAddress]);
   
 
 
@@ -25,15 +33,12 @@ const Header = ({bg='transparent'}:{bg?:string}) => {
         </div>
        {
         address ? (
-           <button onClick={connectWallet} className="bg-[#014421] h-[48px] px-5 lg:h-[50px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl">
-            Connect Wallet
-
-        </button>
-        ) : (
-        <>
+             <>
           <label  className="btn bg-[#014421] h-[48px] px-5 lg:h-[50px] font-bold text-base lg:text-[20px] text-[#F5F5DC] rounded-xl" htmlFor="modal-1"> Register</label>
           <input className="modal-state" id="modal-1" type="checkbox" />
         </>
+        ) : (
+           <ConnectKitButton />
         )
        }
     <RegisterForm />

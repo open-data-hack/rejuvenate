@@ -5,28 +5,6 @@ import { Poppins } from 'next/font/google'
 import { AppWrapper } from "../context/state";
 
 import ChakraProviders from "@/providers/chakra-provider";
-import { DataverseProvider } from '@/context/dataverse';
-// import {
-//   ConnectKitProvider,
-//   ConnectKitButton,
-//   getDefaultConfig,
-// } from "connectkit";
-
-// const config = createConfig(
-//   getDefaultConfig({
-//     // Required API Keys
-//     alchemyId: process.env.ALCHEMY_ID, // or infuraId
-//     walletConnectProjectId: "",
-
-//     // Required
-//     appName: "Your App Name",
-
-//     // Optional
-//     appDescription: "Your App Description",
-//     appUrl: "https://family.co", // your app's url
-//     appIcon: "https://family.co/logo.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
-//   })
-// );
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -47,20 +25,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-
-
-       {/* <WagmiConfig config={config}>
-      <ConnectKitProvider> */}
-        <AppWrapper>
-          <ChakraProviders>
-          {/* <DataverseProvider></DataverseProvider> */}
-
-
-           <body className={poppins.className}>{children}</body>
-          </ChakraProviders>
-        </AppWrapper>
-      {/* </ConnectKitProvider>
-    </WagmiConfig> */}
+      <AppWrapper>
+        <ChakraProviders>
+        <body className={poppins.className}>{children}</body>
+        </ChakraProviders>
+      </AppWrapper>
     </html>
   )
 }

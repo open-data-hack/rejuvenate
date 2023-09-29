@@ -10,26 +10,10 @@ import {
   WALLET
 } from "@dataverse/dataverse-connector";
 
-const dataverseConnector: DataverseConnector = window && new DataverseConnector();
 export function useWallet() {
   const { runtimeConnector } = useContext(DataverseContext);
   const { setAddress } = useAppContext();
   const [wallet, setWallet] = useState<WALLET>();
-
-   const connectWallet = async () => {
-    try {
-      if(typeof window === 'undefined') return
-      const res =  await dataverseConnector.connectWallet({
-  wallet: WALLET.METAMASK,
-});
-      setWallet(res.wallet);
-      console.log(res);
-      setAddress(res.address);
-      return(res.address);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const switchNetwork = async (chainId: number) => {
     const res = await runtimeConnector?.switchNetwork(chainId);
@@ -78,7 +62,6 @@ export function useWallet() {
 
   return {
     wallet,
-    connectWallet,
     switchNetwork,
     contractCall,
     ethereumRequest,
