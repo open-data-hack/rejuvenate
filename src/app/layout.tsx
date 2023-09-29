@@ -51,14 +51,18 @@ export default function RootLayout({
 
        {/* <WagmiConfig config={config}>
       <ConnectKitProvider> */}
+
         <AppWrapper>
+    {/* <DataverseProvider> */}
           <ChakraProviders>
           {/* <DataverseProvider></DataverseProvider> */}
 
 
            <body className={poppins.className}>{children}</body>
           </ChakraProviders>
+    {/* </DataverseProvider> */}
         </AppWrapper>
+
       {/* </ConnectKitProvider>
     </WagmiConfig> */}
     </html>

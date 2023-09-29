@@ -21,7 +21,10 @@ return <ListItem key={'navlink'+i}  fontSize={'18'} className={`py-3 pl-6 hover:
 </ListItem>})
     return (
         <Box className="h-full bg-primaryGray w-[300px] sticky top-0 "  pt={2}>
+            <Link href='/'>
+
 <Image  alt='' src='/images/svg/rejuvenate-logo-2.svg' width={250} height={70}/>
+            </Link>
 <List className="flex flex-col py-6 mt-[30px] mb-6 gap-4">
 {[_links]}
 </List>

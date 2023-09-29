@@ -4,6 +4,7 @@ import { useLobby } from "@huddle01/react/hooks";
 import { useEffect } from "react";
 
 import axios from 'axios'
+import Icon from "../Icon";
 
 
 export default function CustomHuddle({}){
@@ -32,8 +33,7 @@ console.log('error client:',{err});
 }
 
     return (
-        <Button variant={'solid'} onClick={()=>createRoom()}>
-Start Call
-        </Button>
+        <Button size={'sm'} rounded={'full'} gap={2} className="hover:bg-primaryYellowTrans hover:text-primaryGreen text-primaryBeige bg-primaryGreen"><Icon size={20} name="phone"/> Start Call</Button>
+            
     )
 }

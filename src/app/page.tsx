@@ -7,11 +7,9 @@ import WorkWithUs from "@/components/work-with-us";
 import TalkToNutritionist from "@/components/talk-to-nutritionist"
 import CTA from "@/components/cta"
 import Footer from "@/components/footer";
-import { DataverseProvider } from "@/context/dataverse";
 
 const App = () => {
   return (
-    <DataverseProvider>
         <div className="bg-primaryBeige min-h-screen">
      <div className="px-4 lg:px-8 w-full">
         <Header />
@@ -27,7 +25,6 @@ const App = () => {
       <Footer />
    </div>
 
-    </DataverseProvider>
   );
 };
 

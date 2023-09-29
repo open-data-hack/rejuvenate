@@ -18,14 +18,16 @@ export function useWallet() {
 
    const connectWallet = async () => {
     try {
-      if(typeof window === 'undefined') return
-      const res =  await dataverseConnector.connectWallet({
-  wallet: WALLET.METAMASK,
-});
-      setWallet(res.wallet);
-      console.log(res);
-      setAddress(res.address);
-      return(res.address);
+      if(typeof window != 'undefined') {
+
+        const res =  await dataverseConnector.connectWallet({
+          wallet: WALLET.METAMASK,
+        });
+        setWallet(res.wallet);
+        console.log(res);
+        setAddress(res.address);
+        return(res.address);
+      }
     } catch (error) {
       console.error(error);
     }
