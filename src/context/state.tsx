@@ -1,6 +1,6 @@
-"use client";
-import { createContext, useContext, useState } from "react";
-import { stateContextType } from "../types/state";
+'use client';
+import { createContext, useContext, useState } from 'react';
+import { stateContextType } from '../types/state';
 
 const contextDefaultValue: stateContextType = {
   allTokensData: {},

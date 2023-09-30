@@ -1,10 +1,10 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import './globals.css';
+import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
 
-import { AppWrapper } from "../context/state";
+import { AppWrapper } from '../context/state';
 
-import ChakraProviders from "@/providers/chakra-provider";
+import ChakraProviders from '@/providers/chakra-provider';
 import { DataverseProvider } from '@/context/dataverse';
 // import {
 //   ConnectKitProvider,
@@ -32,39 +32,36 @@ const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
   title: 'Rejuvenate AI',
   description: 'We Empower Everyone, Everywhere To LIVE BETTER, LONGER',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-
-
-       {/* <WagmiConfig config={config}>
+    <html lang='en'>
+      {/* <WagmiConfig config={config}>
       <ConnectKitProvider> */}
 
-        <AppWrapper>
-    {/* <DataverseProvider> */}
-          <ChakraProviders>
+      <AppWrapper>
+        {/* <DataverseProvider> */}
+        <ChakraProviders>
           {/* <DataverseProvider></DataverseProvider> */}
 
-
-           <body className={poppins.className}>{children}</body>
-          </ChakraProviders>
-    {/* </DataverseProvider> */}
-        </AppWrapper>
+          <body className={poppins.className}>{children}</body>
+        </ChakraProviders>
+        {/* </DataverseProvider> */}
+      </AppWrapper>
 
       {/* </ConnectKitProvider>
     </WagmiConfig> */}
     </html>
-  )
+  );
 }
