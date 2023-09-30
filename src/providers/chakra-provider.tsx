@@ -1,7 +1,7 @@
 'use client';
 import { ReactNode } from 'react';
 import { CacheProvider } from '@chakra-ui/next-js';
-import { ChakraProvider as Provider } from '@chakra-ui/react';
+import { ChakraProvider as Provider, ThemeConfig } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import { useHuddle01 } from '@huddle01/react';
 const colors = {
@@ -11,8 +11,12 @@ const colors = {
     700: '#2a69ac',
   },
 };
+const config: ThemeConfig = {
+  initialColorMode: 'light',
+  useSystemColorMode: false,
+};
 
-export const theme = extendTheme({ colors });
+export const theme = extendTheme({config, colors });
 export default function ChakraProviders({ children }: { children: ReactNode }) {
   // const { initialize } = useHuddle01();
 
