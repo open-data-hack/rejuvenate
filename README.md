@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RejuvenateAI x Open data hack 
 
-## Getting Started
+Live Demo - [Loom video](https://www.loom.com/share/eca77dc62eab413284ddd31d12a7fe3a) <br />
+Live Link - [RejuvenateAI dapp](https://rejuvenate-ai.netlify.app/) <br />
 
-First, run the development server:
+## ✨ Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+[RejuvenateAI](https://rejuvenate-ai.netlify.app/) is the first community blockchain based project powered by community built for community to promote healthy living and achieve  healthy locations where people live up to a 100 years all around the world. We are trying to make sure people live healthy by incorporating healthy habits into their lifestyle and trying to make sure they get the most out of the human experience by discovering their purpose if they haven't already and enjoying this life, all while doing it together as a community being accountable to each other.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Our features empower personal healthy living habits by:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Allowing users to setup meetings with nutritionists who would offer professional consultation to them.
+- Providing educative articles that can inspire users to live healthier lives.
+- Providing educative meal and fitness plans that paid subscribers have access to.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 💻 How we built RejuvenateAI
 
-## Learn More
+We created and deployed 4 smart contracts in 3 different chains: Mumbai (for the chainlink bounty), Calibration (for the FVM bounty) and lacheluza (for the lilypad bounty)
 
-To learn more about Next.js, take a look at the following resources:
+### Mumbai
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Community contract 0xc64ABE13123EC509fF083a4Ce670fE47Aac9Ced8 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/CommunityChainlink.sol) | [View on mumbai](https://mumbai.polygonscan.com/address/0xc64ABE13123EC509fF083a4Ce670fE47Aac9Ced8)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Treasury contract 0xBE587980878F5c218583f9dA7459798bf92d4FcF - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/Treasury.sol) | [View on mumbai](https://mumbai.polygonscan.com/address/0xBE587980878F5c218583f9dA7459798bf92d4FcF)
 
-## Deploy on Vercel
+3. User NFT contract 0x42D157421b5520E7477c5B3399312Da9685b5326 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/UserNFT.sol) | [View on mumbai](https://mumbai.polygonscan.com/address/0x42D157421b5520E7477c5B3399312Da9685b5326)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Nutritionist NFT contract 0xd2afe42AAF6F19c2C7719Ed03bC266e89b7D7030 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/NutritionistNFT.sol) | [View on mumbai](https://mumbai.polygonscan.com/address/0xd2afe42AAF6F19c2C7719Ed03bC266e89b7D7030)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+### Calibration
+
+1. Community contract 0xE8f8B364a5bD42513d12B9Dd0ee2A8B9dCfAB303 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/CommunityFVM.sol) | [View on calibration testnet scan](https://calibration.filscan.io/en/address/0xE8f8B364a5bD42513d12B9Dd0ee2A8B9dCfAB303/)
+
+2. Treasury contract 0x34FE144543475Ee0D78bB048a114Fc5eE900e99D - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/Treasury.sol) | [View on calibration testnet scan](https://calibration.filscan.io/en/address/0x34FE144543475Ee0D78bB048a114Fc5eE900e99D)
+
+3. User NFT contract 0x17DAbD6a4EdE37CAC9acc7f107931E2A0600F409 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/UserNFT.sol) | [View on calibration testnet scan](https://calibration.filscan.io/en/address/0x17DAbD6a4EdE37CAC9acc7f107931E2A0600F409)
+
+4. Nutritionist NFT contract 0xeE72F500671d7F8439c0b3B3c6a472CdA4BCb560 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/NutritionistNFT.sol) | [View on calibration testnet scan](https://calibration.filscan.io/en/address/0xeE72F500671d7F8439c0b3B3c6a472CdA4BCb560)
+
+
+
+### Lilypad
+
+1. Community contract 0xB6A44e41Cb7aeB0A8Ac45a36dDE06072FFB1dC12 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/CommunityLilypad.sol) 
+
+2. Treasury contract 0x4BA50b0D35253fBa2B7D683C620ad4fAf4a3485f - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/Treasury.sol)
+
+3. User NFT contract 0xcd5d5a793b7259b2fFa3d8A1CcF2b640d7d11784 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/UserNFT.sol) 
+
+4. Nutritionist NFT contract 0x7dA8F2F7EF7760E086c2b862cdDeBEFa8d969aa2 - [View source code](https://github.com/open-data-hack/smart-contracts/blob/main/contracts/NutritionistNFT.sol)
+
+
