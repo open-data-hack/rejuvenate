@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 import { NextResponse } from 'next/server';
- 
-export async function GET(){
+
+export async function GET() {
   try {
     const { data } = await axios.post(
       'https://api.huddle01.com/api/v1/create-room',
@@ -12,18 +12,18 @@ export async function GET(){
       },
       {
         headers: {
-            'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
           'x-api-key': process.env.HUDDLE_API_KEY,
         },
       }
     );
- return NextResponse.json(data,{status:200})
+    return NextResponse.json(data, { status: 200 });
     // res.status(200).json(data);
   } catch (error) {
-    console.log('API',{error});
-    
-   return NextResponse.json(error,{status:500});
+    console.log('API', { error });
+
+    return NextResponse.json(error, { status: 500 });
   }
-};
- 
-// export  {handler as GET, handler as POST} 
+}
+
+// export  {handler as GET, handler as POST}

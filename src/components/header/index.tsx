@@ -1,5 +1,5 @@
+'use client';
 
-"use client";
 import { useEffect } from "react";
 import { Link } from "@chakra-ui/next-js";
 import { useAccount } from "wagmi";
@@ -10,17 +10,14 @@ import {
   ConnectKitButton,
 } from "connectkit";
 
-const Header = ({bg='transparent'}:{bg?:string}) => {
+const Header = ({ bg = 'transparent' }: { bg?: string }) => {
+  // const { wallet, connectWallet } = useWallet();
+  const { setAddress } = useAppContext();
+  const { address } = useAccount();
 
-   const { setAddress } = useAppContext();
-   const { address } = useAccount();
-
-    useEffect(() => {
-      setAddress(`${address}`);
-    }, [address, setAddress]);
-  
-
-
+  useEffect(() => {
+    setAddress(`${address}`);
+  }, [address, setAddress]);
   return (
     <section className={`bg-${bg} px-2 max-w-[1300px] w-full py-1 flex justify-between items-center mx-auto`}>
         <div>

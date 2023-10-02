@@ -17,4 +17,3 @@ export type stateContextType = {
   setAddress: (data: string) => void;
   setLoading: (data: boolean) => void;
 };
-

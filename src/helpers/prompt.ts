@@ -2,18 +2,17 @@ import { Petit_Formal_Script } from 'next/font/google';
 //@ts-ignore
 import { Web3Storage } from 'web3.storage';
 
-function getAccessToken () {
-  return process.env.NEXT_PUBLIC_WEB3STORAGE_API_TOKEN
+function getAccessToken() {
+  return process.env.NEXT_PUBLIC_WEB3STORAGE_API_TOKEN;
 }
 
-function makeStorageClient () {
-  return new Web3Storage({ token: getAccessToken () })
+function makeStorageClient() {
+  return new Web3Storage({ token: getAccessToken() });
 }
-export const uploadPromptToIpfs = async (data: any)=>{
-    const client = makeStorageClient ();
-   const prompt =
- {
-    "template": `
+export const uploadPromptToIpfs = async (data: any) => {
+  const client = makeStorageClient();
+  const prompt = {
+    template: `
     You are a robot built by rejuvenateAI. Your goal is to predict the rate of aging of users.
     You must respond with the following json output and nothing else. (Reverse, Fast, Moderate, Slow)
     example: {"aging": "Fast"}
@@ -79,7 +78,7 @@ export const uploadPromptToIpfs = async (data: any)=>{
         ],
     }
     `,
-    "parameters": `
+    parameters: `
 
             {"question: Given the following:
             Date of Birth: ${data?.birthDate} /n
@@ -100,14 +99,16 @@ export const uploadPromptToIpfs = async (data: any)=>{
             I know you don't have enough data but use your best understanding./n
             Respond with either Reverse, Fast, Moderate, or Slow. Remember as a json object./n
             "}
-        `}
+        `,
+  };
 
-
-    const content = new Blob([JSON.stringify(prompt)], { type: "application/json" });
-    const fileObj = new File([content], "file.json", {
-        type: "application/json",
-    });
-    const res = await client.put([fileObj]);
-    console.log(res);
-    return res;
-}
+  const content = new Blob([JSON.stringify(prompt)], {
+    type: 'application/json',
+  });
+  const fileObj = new File([content], 'file.json', {
+    type: 'application/json',
+  });
+  const res = await client.put([fileObj]);
+  console.log(res);
+  return res;
+};
