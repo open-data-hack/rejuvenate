@@ -11,7 +11,6 @@ import {
 } from "connectkit";
 
 const Header = ({ bg = 'transparent' }: { bg?: string }) => {
-  // const { wallet, connectWallet } = useWallet();
   const { setAddress } = useAppContext();
   const { address } = useAccount();
 
