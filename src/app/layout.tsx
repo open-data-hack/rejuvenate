@@ -47,8 +47,8 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-
-       {/* <WagmiConfig config={config}>
+{/* 
+       <WagmiConfig config={config}>
       <ConnectKitProvider> */}
         <AppWrapper>
           <ChakraProviders>
@@ -57,7 +57,7 @@ export default function RootLayout({
           </ChakraProviders>
         </AppWrapper>
       {/* </ConnectKitProvider>
-    </WagmiConfig> */
+    </WagmiConfig>  */}
     </html>
   )
 }
