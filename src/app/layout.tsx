@@ -4,7 +4,7 @@ import { Poppins } from 'next/font/google';
 
 import { AppWrapper } from '../context/state';
 
-import ChakraProviders from "@/providers/chakra-provider";
+import ChakraProviders from '@/providers/chakra-provider';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -24,10 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <AppWrapper>
         <ChakraProviders>
-        <body className={poppins.className}>{children}</body>
+          <body className={poppins.className}>{children}</body>
         </ChakraProviders>
       </AppWrapper>
     </html>

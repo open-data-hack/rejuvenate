@@ -4,6 +4,7 @@ import { WagmiConfig, createConfig } from 'wagmi';
 import { ConnectKitProvider, getDefaultConfig } from 'connectkit';
 import { stateContextType } from '../types/state';
 import { NearSocialBridgeProvider, Spinner } from 'near-social-bridge';
+import 'near-social-bridge/near-social-bridge.css';
 
 const config = createConfig(
   getDefaultConfig({
