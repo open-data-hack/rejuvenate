@@ -1,4 +1,4 @@
-const externalAppUrl = "http://localhost:3000";
+const externalAppUrl = "http://localhost:3000/";
 
 return (
   <Widget

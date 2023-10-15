@@ -6,7 +6,8 @@ import {
   getDefaultConfig,
 } from "connectkit";
 import { stateContextType } from '../types/state';
-
+import { NearSocialBridgeProvider, Spinner, overrideLocalStorage } from 'near-social-bridge'
+import 'near-social-bridge/near-social-bridge.css'
 
 const config = createConfig(
   getDefaultConfig({
@@ -38,6 +39,7 @@ type StateContextProviderProps = {
 };
 
 const AppContext = createContext<stateContextType>(contextDefaultValue);
+overrideLocalStorage()
 
 export function AppWrapper({ children }: StateContextProviderProps) {
   const [allTokensData, setAllTokenData] = useState<any>();
@@ -54,11 +56,13 @@ export function AppWrapper({ children }: StateContextProviderProps) {
   };
 
   return (
+    
       <WagmiConfig config={config}>
         <ConnectKitProvider>
           <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>
         </ConnectKitProvider> 
       </WagmiConfig>
+      
   );
 }
 

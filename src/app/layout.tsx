@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 };
 
 overrideLocalStorage();
+
 export default function RootLayout({
   children,
 }: {
@@ -32,13 +33,19 @@ export default function RootLayout({
   return (
  
     <html lang="en">
-      <AppWrapper>
       <NearSocialBridgeProvider fallback={<Spinner />}>
+      <AppWrapper>
+      
         <ChakraProviders>
-        <body className={poppins.className}>{children}</body>
+        
+        {/* <body className={poppins.className}>
+        {children}</body>
+         */}
+         {children}
         </ChakraProviders>
-        </NearSocialBridgeProvider>
+        
       </AppWrapper>
+      </NearSocialBridgeProvider>
       
     </html>
    
