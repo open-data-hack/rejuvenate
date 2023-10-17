@@ -5,6 +5,7 @@ import { Poppins } from 'next/font/google';
 import { AppWrapper } from '../context/state';
 
 import ChakraProviders from '@/providers/chakra-provider';
+import "near-social-bridge/near-social-bridge.css";
 
 const poppins = Poppins({
   subsets: ['latin'],

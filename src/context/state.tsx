@@ -3,8 +3,6 @@ import { createContext, useContext, useState } from 'react';
 import { WagmiConfig, createConfig } from 'wagmi';
 import { ConnectKitProvider, getDefaultConfig } from 'connectkit';
 import { stateContextType } from '../types/state';
-import { NearSocialBridgeProvider, Spinner } from 'near-social-bridge';
-import 'near-social-bridge/near-social-bridge.css';
 
 const config = createConfig(
   getDefaultConfig({
@@ -52,7 +50,7 @@ export function AppWrapper({ children }: StateContextProviderProps) {
   };
 
   return (
-    <NearSocialBridgeProvider fallback={<Spinner />}>
+   
       <WagmiConfig config={config}>
         <ConnectKitProvider>
           <AppContext.Provider value={sharedState}>
@@ -60,7 +58,7 @@ export function AppWrapper({ children }: StateContextProviderProps) {
           </AppContext.Provider>
         </ConnectKitProvider>
       </WagmiConfig>
-    </NearSocialBridgeProvider>
+   
   );
 }
 
