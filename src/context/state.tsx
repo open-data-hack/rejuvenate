@@ -1,26 +1,8 @@
 'use client';
 import { createContext, useContext, useState } from 'react';
-import { WagmiConfig, createConfig } from 'wagmi';
-import { ConnectKitProvider, getDefaultConfig } from 'connectkit';
 import { stateContextType } from '../types/state';
 import { NearSocialBridgeProvider, Spinner } from 'near-social-bridge';
 import 'near-social-bridge/near-social-bridge.css';
-
-const config = createConfig(
-  getDefaultConfig({
-    // Required API Keys
-    alchemyId: process.env.ALCHEMY_ID, // or infuraId
-    walletConnectProjectId: '',
-
-    // Required
-    appName: 'Your App Name',
-
-    // Optional
-    appDescription: 'Your App Description',
-    appUrl: 'https://family.co', // your app's url
-    appIcon: 'https://family.co/logo.png', // your app's icon, no bigger than 1024x1024px (max. 1MB)
-  })
-);
 
 const contextDefaultValue: stateContextType = {
   allTokensData: {},
@@ -53,13 +35,7 @@ export function AppWrapper({ children }: StateContextProviderProps) {
 
   return (
     <NearSocialBridgeProvider fallback={<Spinner />}>
-      <WagmiConfig config={config}>
-        <ConnectKitProvider>
-          <AppContext.Provider value={sharedState}>
-            {children}
-          </AppContext.Provider>
-        </ConnectKitProvider>
-      </WagmiConfig>
+      <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>
     </NearSocialBridgeProvider>
   );
 }
